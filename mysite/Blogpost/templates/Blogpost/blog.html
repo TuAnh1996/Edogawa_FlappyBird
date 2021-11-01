@@ -1,0 +1,22 @@
+{% extends "pages/index.html" %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+
+   <div style="margin:3%">
+        {% for post in Posts %}
+            <h4 style="padding-bottom: 14px; border-bottom: 2px solid #ff6a7a;
+                       margin-bottom: 20px;">
+    
+                  {{post.date|date:"d-m-Y"}}
+                  <a href="/Blogpost/{{post.id}}">{{post.title}}</a>
+             </h4>
+            <img src="{{post.image.url}}" style="width:100%;" />
+        {% endfor %}
+        <br/>
+        {% if page_obj.has_next %}
+            <a href="{{request.path}}?page={{page_obj.next_page_number}}">next</a>
+        {% endif %}
+   </div>
+  
+
+{% endblock %}

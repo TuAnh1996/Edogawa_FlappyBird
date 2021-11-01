@@ -1,0 +1,35 @@
+ {% extends "pages/index.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="row" style="margin:3%">
+  <div class="col-sm-6">
+    <p>氏名 : グエン　タントゥ</p>
+    <p>就学種別　：	留学生</p>
+    <p>大学名：江戸川大学</p>
+    <p>所属学科組織　：	大学 メディア学部 情報文化学科</p>
+    <p>学年	: 3年生</p>
+  </div>
+  <div class="col-sm-6">
+      <img src="{% static './images/edogawa.jpg' %}"alt="" style="width:100%;" >
+   </div>
+</div>
+
+ {% comment %} {% for comment in Commenttt_list %}
+         <h4><strong>{{comment.author}}</strong></h4>
+            <h6><p>{{comment.date}}</p></h6>
+            <p>{{comment.body|linebreaks}}</p>
+ {% endfor %} 
+ {% if user.username %}
+          <form  method="POST">
+                {% csrf_token %}
+                <p><label>コメント:</label></p>
+                {{form.body}}
+                <br/>
+                <input type="submit" value="投稿"/>
+{% endif %} {% endcomment %}
+{% endblock %} 
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+     <link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}" type="text/css">
+     <link rel="stylesheet" href="{% static 'css/indexy.css' %}">
+
+   
+</head>
+<body>
+   <header>
+        <div class="header_img">
+            <!-- <img src="./images/laco.png" alt="" width="100%" height="300"> -->
+        </div>
+
+        <div class="header_title">
+            <div class="row">
+               <div class="header_left col-sm-6 　">
+
+
+                   <div class="header_left--title ">
+                      <h1> グエン　タントゥ </h1>
+                      <p>ベトナム風景を紹介するブログ</p>
+                    </div>
+                </div>
+                <div class="header-right  col-sm-6">
+
+                   <ul class="nav">
+                    <li class="nav-item">
+                        <img src="{% static './images/vietnhat.jpg' %}" alt="">
+
+                        {% comment %} <img src="./images/vietnhat.jpg" alt=""> {% endcomment %}
+
+                    </li>
+                    <li class="nav-item">
+                         <img src="{% static './images/halong1.jpg' %}" alt="">
+                  
+
+                    </li>
+                    <li class="nav-item">
+                        <img src="{% static './images/hue.jpg' %}" alt="">
+
+                     
+
+                    </li>
+                    <li class="nav-item">
+                        <img src="{% static './images/duater.jpg' %}" alt="">
+
+                      
+
+                    </li>
+
+                    <li class="nav-item">
+                         <img src="{% static './images/nhatrang.jpg' %}" alt="">
+
+                   
+
+                    </li>
+                   </ul>
+ 
+                </div>
+            </div>
+        
+        </div>
+       
+        <div class="header_content">
+           <div class="row">
+                   <div class="header_content__right col-sm-7">
+                  <ul class="nav">
+                    <li class="nav-item">
+                  <a class="nav-link" href="{% url 'home' %}">Home</a>
+                   </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Blogpost' %}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'polls' %}">個人情報</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'contact' %}">ゲーム</a>
+                </li>
+            </ul>
+           </div>
+           <div class="header_content__left col-sm-5">
+                  {% if user.username %}
+                     <ul class="nav">
+                        <li class="nav-item">                        
+                             <a class="nav-link">Hello {{user.username}}</a>
+                        </li>
+                         <li class="nav-item">
+                             <a class="nav-link"href="{% url 'logout' %}">ログアウト</a>
+                         </li>
+                    </ul>              
+                {% else %}
+                    <ul class="nav">
+                        <li class="nav-item">
+                             <a class="nav-link" href="{%  url 'register' %}">登録</a>
+                        </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="{%  url 'login' %}">ログイン</a>
+                         </li>
+                    </ul>               
+                {% endif %}
+           </div>  
+           </div>
+                
+        </div>
+       
+        <div class="header_logo">
+            <img src="{% static './images/IMG_1216.JPG' %}"class="rounded-circle" width="110px" alt="">
+          
+        </div>
+
+
+    </header>
+     <div>
+             {% block content %}
+             {% endblock %}
+    </div>
+   <footer>
+   　 
+         <h1>江戸川大学 ３年生　グエンタントゥ　1932802　</h1>
+   　
+　　</footer>
+   
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+{% load static %}
+   <link rel="stylesheet" href="{% static 'css/comment.css' %}">
+{% comment %} <body style="margin:0;background:#dadce0"> {% endcomment %}
+    
+
+{% comment %} <div style="background:#dadce0" class="comment"> {% endcomment %}
+<body >
+     <header >
+         <img src="{% static './images/img-0376.jpg' %}" alt="" >
+     </header>
+{% comment %} <div  class="comment-content__header"></div> {% endcomment %}
+      
+     <div class="comment-content">
+           <div class="comment-content__header"></div>
+           <div class="comment-content__body">
+                <p1>感想を書いていただき, ありがとうございました。</p1>
+                <div class="comment-content__a">
+                    <p2>もう一度ゲームを楽しみましょう！！！</p2>
+                    <a  href="{% url 'contact' %}">ゲーム</a>
+               
+              
+                </div>
+                <div class="comment-content__a">
+                 <a  href="{% url 'home' %}">Blog</a>
+                </div>
+               
+            
+            </div>    
+           <footer>
+               <span>江戸川大学ー情報文化学科―山口先生ゼミ</span>
+            </footer>
+     </div>
+</body>
+{% comment %} </div> {% endcomment %}
+{% comment %} </body> {% endcomment %}
